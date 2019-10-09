@@ -17,7 +17,7 @@ $curr_path = Split-Path -parent $MyInvocation.MyCommand.Path
 # Create a PowerPoint object
 $ppt_app = New-Object -ComObject PowerPoint.Application
 # Get all objects of type .ppt? in $curr_path and its subfolders
-Get-ChildItem -Path $curr_path -Recurse -Filter *.ppt? | ForEach-Object {
+Get-ChildItem -Path $curr_path -Recurse -Filter *.pptx? | ForEach-Object {
     Write-Host "Processing" $_.FullName "..."
     # Open it in PowerPoint
     $document = $ppt_app.Presentations.Open($_.FullName)
